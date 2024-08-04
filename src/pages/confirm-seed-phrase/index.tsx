@@ -68,8 +68,7 @@ export default function ConfirmSeedPhrase(){
                 </Row>
                 <Row className="mt-4">
                     <Col>
-                    <Button color="primary" onClick={handleConfirm}>Confirm</Button>
-
+                        <Button color="primary" onClick={handleConfirm}>Confirm</Button>
                     </Col>
                 </Row>
             </Container>
