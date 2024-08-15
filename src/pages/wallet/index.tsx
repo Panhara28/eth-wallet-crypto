@@ -72,11 +72,10 @@ export default function Wallet() {
     return (
         <>
             <ApplicationLayout>
-                <div className="bg-menuDark tf-container">
+                <div className="bg-menuDark tf-container mt-40">
                     <div className="pt-12 pb-12 mt-4">
                         <h5><span className="text-primary">My Wallet</span> - <a href="#" className="choose-account" data-bs-toggle="modal" data-bs-target="#accountWallet"><span className="dom-text">Account 1 </span> &nbsp;<i className="icon-select-down"></i></a> </h5>
                         <p style={{ fontSize: 14 }} title={address}>{address && address?.slice(0, 4)}...{address?.slice(38)} <BiLogOutCircle onClick={onLockWallet} style={{ fontSize: 18, cursor: "pointer" }} /></p>
-
                         <h1 className="mt-16"><Link href="/">{formatEth(balance)} </Link></h1>
                         <ul className="mt-16 grid-4 m--16">
                             <li>
