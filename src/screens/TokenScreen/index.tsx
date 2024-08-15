@@ -28,14 +28,6 @@ export default function TokenScreen({ tokens }: any) {
                         NFTs
                     </NavLink>
                 </NavItem>
-                <NavItem>
-                    <NavLink
-                        className={tab === "transfers" ? "active" : "text-white "}
-                        onClick={() => onTab("transfers")}
-                    >
-                        Transfer
-                    </NavLink>
-                </NavItem>
             </Nav>
             <TabContent activeTab={tab}>
                 <TabPane tabId="token">
@@ -84,13 +76,6 @@ export default function TokenScreen({ tokens }: any) {
                     <Row>
                         <Col sm="12">
                             <h4>NFTs</h4>
-                        </Col>
-                    </Row>
-                </TabPane>
-                <TabPane tabId="transfers">
-                    <Row>
-                        <Col sm="12">
-                            <h4>Transfers</h4>
                         </Col>
                     </Row>
                 </TabPane>
