@@ -1,13 +1,11 @@
 import Moralis from "moralis";
 import { NextApiRequest, NextApiResponse } from "next";
 
+Moralis.start({
+    apiKey: process.env.NEXT_PUBLIC_SECRET_KEY,
+});
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-
     try {
-        Moralis.start({
-            apiKey: process.env.NEXT_PUBLIC_SECRET_KEY,
-        });
-
         const { chain, address }: any = req.query
 
         const tokens = await Moralis.EvmApi.token.getWalletTokenBalances({
@@ -28,14 +26,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         })
 
         const balance: any = await Moralis.EvmApi.balance.getNativeBalance({
-            chain: chain,
+            chain,
             address
         });
 
         const jsonResponse = {
             tokens: tokens.raw,
             nfts: myNfts,
-            balance: balance.raw.balance / (10 ** 18),
+            balance: balance.raw.balance,
         }
 
         res.status(200).json(jsonResponse)
